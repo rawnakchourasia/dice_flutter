@@ -20,17 +20,36 @@ class DicePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          flex: 1,
-          child: Image.asset('images/dice1.png'),
-        ),
-        Expanded(
-          flex: 1,
-          child: Image.asset('images/dice1.png'),
-        )
-      ],
+    var leftDiceNumber = 5;
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                child: Image.asset('images/dice$leftDiceNumber.png'),
+                onPressed: () {
+                  print('left button clicked!');
+                },
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                child: Image.asset('images/dice1.png'),
+                onPressed: () {
+                  print('right button clicked!');
+                },
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
